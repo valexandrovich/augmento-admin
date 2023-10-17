@@ -5,7 +5,7 @@ import {ref, onMounted} from 'vue';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-light.css'
 
-const codeBlock = ref(null);
+const codeBlock = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   if (codeBlock.value) {
@@ -14,7 +14,10 @@ onMounted(() => {
 })
 
 const copyCode = () => {
-  navigator.clipboard.writeText(codeBlock.value.textContent)
+  const text = codeBlock.value?.textContent;
+  if (text) {
+    navigator.clipboard.writeText(text);
+  }
 }
 </script>
 

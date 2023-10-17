@@ -9,6 +9,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 export default defineConfig({
   base: '/augmento-admin/',
+
   plugins: [
     vue(),
     vueJsx(),

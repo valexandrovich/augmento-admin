@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import DashboardView from "@/views/DashboardView.vue";
+import AccountView from "@/views/AccountView.vue";
 
 const router = createRouter({
   history: createWebHistory('/augmento-admin/'),
@@ -14,6 +15,11 @@ const router = createRouter({
       path: '/',
       name: 'dashboadrd',
       component: DashboardView
+    },
+    {
+      path: '/account',
+      name: 'account',
+      component: AccountView
     }
   ]
 })

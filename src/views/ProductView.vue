@@ -3,7 +3,7 @@
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 
-const productId = ref(null);
+const productId = ref<any>(null);
 
 const route = useRoute();
 

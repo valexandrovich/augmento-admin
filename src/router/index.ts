@@ -4,8 +4,8 @@ import DashboardView from "@/views/DashboardView.vue";
 
 const router = createRouter({
   // history: createWebHistory('./'),
-  history: createWebHistory('./'),
-  // history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory('./'),
+  history: createWebHistory(import.meta.env.BASE_URL),
   // history: createWebHistory(process.env.BASE_URL),
   routes: [
     {

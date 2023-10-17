@@ -5,12 +5,10 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
-export default defineConfig({
-  // base: './',
-  // base: '/augmento-admin/',
-  // base: import.meta.env.VITE_BASE_URL || './',
-  base: process.env.BASE_URL,
 
+
+export default defineConfig({
+  base: '/augmento-admin/',
   plugins: [
     vue(),
     vueJsx(),

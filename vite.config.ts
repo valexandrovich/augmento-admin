@@ -10,6 +10,7 @@ export default defineConfig({
   // base: '/augmento-admin/',
   // base: import.meta.env.VITE_BASE_URL || './',
   base: process.env.BASE_URL,
+
   plugins: [
     vue(),
     vueJsx(),

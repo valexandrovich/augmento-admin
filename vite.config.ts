@@ -11,7 +11,13 @@ export default defineConfig({
   base: '/augmento-admin/',
 
   plugins: [
-    vue(),
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag === 'model-viewer'
+        }
+      }
+    }),
     vueJsx(),
   ],
   resolve: {

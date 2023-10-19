@@ -8,14 +8,14 @@
       <div class="flex flex-col md:w-7/12">
         <span class="text-2xl font-bold">My account</span>
 
-        <spane class="py-4 font-semibold">Company name</spane>
-        <input type="text" class="bg-white outline outline-gray-300 shadow-md rounded-lg p-1">
+        <span class="py-4 font-semibold">Company name</span>
+        <input type="text" class="outline outline-1 outline-gray-300 rounded-md px-4 py-1 shadow-md mb-4">
 
-        <spane class="py-4 font-semibold">Email</spane>
-        <input type="text" class="bg-white outline outline-gray-300 shadow-md rounded-lg p-1">
+        <span class="py-4 font-semibold">Email</span>
+        <input type="text" class="outline outline-1 outline-gray-300 rounded-md px-4 py-1 shadow-md mb-4">
 
-        <spane class="py-4 font-semibold">Website</spane>
-        <input type="text" class="bg-white outline outline-gray-300 shadow-md rounded-lg p-1">
+        <span class="py-4 font-semibold">Website</span>
+        <input type="text" class="outline outline-1 outline-gray-300 rounded-md px-4 py-1 shadow-md mb-4">
 
 
 

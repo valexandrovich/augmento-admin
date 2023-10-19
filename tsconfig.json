@@ -1,5 +1,16 @@
 {
+  "include": [
+    "declarations.d.ts"
+  ],
+  "compilerOptions": {
+//    "noEmitOnError": false, // Do not stop the emit process even if there are type errors
+//    "skipLibCheck": true,  // Skip type checking of declaration files
+//    "isolatedModules": true, // Each file is treated as a separate module
+//    "strict": false, // Disable strict type checking
+//    "noImplicitAny": false, // Do not raise error on expressions and declarations with an implied 'any' type
 
+    // ... other options ...
+  },
   "files": [],
   "references": [
     {

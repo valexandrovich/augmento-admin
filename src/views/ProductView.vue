@@ -48,34 +48,35 @@ const route = useRoute();
 
 const fileInput = ref<HTMLInputElement | null>(null);
 import * as THREE from "three";
+
 import {GLTFExporter} from "three/examples/jsm/exporters/GLTFExporter";
 import type {Frame} from "@/models/Product";
 
 const state = reactive<{
-  thumbnailFile: File | null,
-  thumbnailFileType: string,
-  thumbnailFileData: ArrayBuffer,
-  selectedFrame: Frame,
-  gltfUrl: string,
-  isGlass: boolean,
+  thumbnailFile?: any,
+  thumbnailFileType?: any,
+  thumbnailFileData?: any ,
+  selectedFrame?: any,
+  gltfUrl?: any,
+  isGlass?: any,
 
-  placement: string,
-  artworkMaxSide: string,
+  placement: any,
+  artworkMaxSide?: any,
 
-  frameThick: number
-  frameDepth: number
-  artWorkMaxSize: number
+  frameThick?: any
+  frameDepth?: any
+  artWorkMaxSize?: any
 
 
 }>({
-  thumbnailFile: null,
-  thumbnailFileType: '',
-  thumbnailFileData: '',
-  selectedFrame: null,
-  gltfUrl: '',
+  // thumbnailFile: null,
+  // thumbnailFileType: '',
+  // thumbnailFileData: null,
+  // selectedFrame: null,
+  // gltfUrl: '',
   isGlass: true,
   placement: 'wall',
-  artworkMaxSide: 'height',
+  // artworkMaxSide: 'height',
   frameThick: 3,
   frameDepth: 1,
   artWorkMaxSize: 50
@@ -96,7 +97,7 @@ const openFileDialog = () => {
 };
 
 
-const handleThumbnail = (event: InputEvent) => {
+const handleThumbnail = (event: Event) => {
   const inputElement = event.target as HTMLInputElement;
   if (inputElement.files && inputElement.files.length > 0) {
     state.thumbnailFile = (event.target as HTMLInputElement).files?.[0]
@@ -113,7 +114,7 @@ const handleThumbnail = (event: InputEvent) => {
   }
 }
 
-const loadImage: Image = async (imageData: ArrayBuffer) => {
+const loadImage: any = async (imageData: any) => {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.src = imageData;
@@ -125,7 +126,7 @@ const loadImage: Image = async (imageData: ArrayBuffer) => {
   });
 }
 
-const gltfToBlob = (model) => {
+const gltfToBlob = (model : any) => {
   fetch(model)
       .then((response) => response.arrayBuffer())
       .then((buffer) => {
@@ -234,7 +235,7 @@ const refreshModel = async () => {
   gltfExporter.parse(
       frame,
 
-      (gltf) => {
+      (gltf : any) => {
         const gltfUrl = URL.createObjectURL(
             new Blob([JSON.stringify(gltf)], {type: "model/gltf+json"})
         );
@@ -304,7 +305,7 @@ const _handleThumbnail = (event: InputEvent) => {
       gltfExporter.parse(
           mesh,
 
-          (gltf) => {
+          (gltf : any) => {
             const gltfUrl = URL.createObjectURL(
                 new Blob([JSON.stringify(gltf)], {type: "model/gltf+json"})
             );
@@ -377,7 +378,6 @@ const _handleThumbnail = (event: InputEvent) => {
 
 <template>
 
-  {{ state.placement }}
 
   <div class="flex flex-col p-12">
 
@@ -409,7 +409,7 @@ const _handleThumbnail = (event: InputEvent) => {
       <div class="flex flex-1 flex-col">
         <h3>Thumbnail</h3>
         <div class="flex flex-col md:flex-row">
-          <div class="flex flex-col flex-1 p-4">
+          <div class="flex flex-col flex-1 py-2">
             <div class="mb-2">
               <input type="file" accept="image/*" class="hidden" ref="fileInput" @change="handleThumbnail">
 
